@@ -1,85 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book finder</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <title>Book Recommender</title>
 </head>
 <body>
-    <H1>Book finder</H1>
-    <p>Find your favorite book</p>
-    <p>Fill in the form below to find your favorite book</p>
-    <form id="prefrenceForm">
-        <label for="genre">Genre: </label>
-        <select id="genre">
-            <option value=""> -- Select The Genre -- </option>
+    <header>
+        <h1>Find Your Next Favorite Book</h1>
+        <form id="searchForm">
+          <input type="search" id="searchInput" placeholder="Search for a book, author, or keyword..." required>
+          <button type="submit">Search</button>
+        </form>
+      </header>
+      
+    <!-- Book Recommender Section -->
+    <section id="book-recommender">
+      <form id="bookForm">
+        <fieldset>
+        <legend>Select Your Preferences:</legend>
+        <!-- Genre Selection -->
+        <label>Genre:
+          <select id="genre">
+            <option value="">--Select--</option>
             <option value="fiction">Fiction</option>
-            <option value="non-fiction">Non Fiction</option>
-            <option value="educational">Educational</option>
-            <option value="mystery">Mystery</option>
+            <option value="non-fiction">Non-Fiction</option>
             <option value="fantasy">Fantasy</option>
-            <option value="novels">Novels</option>
+            <option value="mystery">Mystery</option>
+            <option value="educational">Educational</option>
+            <option value="technology">Technology</option>
             <option value="poems">Poems</option>
             <option value="horror">Horror</option>
-            <option value="history">History</option>
-            
-        </select>
-
-        <br>
-        
-        <br>
-
-        <label for="price">Max price (£): </label>
-        <input type="number" id="price" step="0.01">
-
-        <br>
-        
-        <br>
-
-        <label for="language">Language: </label>
-        <select name="language" id="language">
-            <option value="english">Englsih</option>
+          </select>
+        </label>
+        <!-- Author Input -->
+        <label>Author: <input type="text" id="author"></label>
+        <!-- Max Price Input -->
+        <label>Max Price (£): <input type="number" id="price" min="0"></label>
+        <!-- Language Selection -->
+        <label>Language:
+          <select id="language">
+            <option value="">--Select--</option>
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
             <option value="french">French</option>
             <option value="dutch">Dutch</option>
-            <option value="spanish">Spanish</option>
-            <option value="portuguese">Portgesese</option>
-        </select>
-        <br>
+            <option value="portuguese">Portuguese</option>
+          </select>
+        </label>
+        <!-- Publication Year Input -->
+        <label>Publication Year (min): <input type="number" id="year" min="1900" max="2025"></label>
+        <!-- Submit Button -->
+        <button type="submit">Search</button>
+        </fieldset>
+      </form>
+    </section>
+    
+    <!-- Results Section -->
+    <section id="results"></section>
 
-        <br>
-
-        <label for="author">Author: </label>
-        <input type="text" id="author" placeholder="Author name">
-
-        <br>
-
-        <br>
-
-        <label for="title">Book Title: </label>
-        <input type="text" id="title" placeholder="Book title">
-
-        <br>
-        <br>
-
-        <label for="publisher">Publisher: </label>
-        <input type="text" id="publisher" placeholder="Publisher name">
-
-        <br>
-        <br>
-
-        <label for="year">Year: </label>
-        <input type="number" id="year" placeholder="Year of publication">
-        
-        <br>
-        <br>
-
-        <label for="rating">Rating: </label>
-        <input type="number" id="rating" step="0.1" min="0" max="5" placeholder="Rating (0-5)">
-
-        <button type="submit">Find Books</button>
-    </form>
-    <div id="result"></div>
-
+    <script src="app.js"></script>
 </body>
 </html>
