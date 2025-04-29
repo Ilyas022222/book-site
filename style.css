@@ -1,0 +1,113 @@
+/* styles.css */
+
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f2f2f2;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#searchForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#searchInput, #searchForm button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Book Recommender Form */
+#book-recommender {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+fieldset {
+  border: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* Book results container */
+#results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Single Book Card */
+.book {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.book h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.book p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.book .wishlist-btn {
+  margin-top: 10px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book .wishlist-btn:hover {
+  background: #e64a19;
+}
+
+/* Highlight Wishlist */
+.book.wishlist {
+  border: 2px solid #ff9800;
+}
